@@ -1,0 +1,136 @@
+body{
+    height: 100%;
+}
+
+#whole-article{
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+// --------------   go-back button --------------------
+
+#but-container{
+    // position: absolute;
+    left: 0;
+    margin: 50px;
+    // background-color: aquamarine;
+    border-radius: 30px;
+    display:flex;
+    flex-direction: row;    
+}
+
+#backBtn{
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 170px;
+    min-width: 80px;
+    justify-content: space-around;
+}
+
+#backBtn span{
+    // margin-left: 2px;
+    @media screen and (max-width: 450px) {
+        display: none;
+    }
+}
+
+//  --------------------  content  -----------------------
+
+#article-body{
+    position: relative;
+    padding: 0 75px;
+    max-width: 1000px;
+    margin: 0 auto;
+    // top: 200px;
+    // margin-top: 5rem;
+}
+
+#course-code{
+    text-emphasis: bold;
+}
+
+.para-wrapper{
+    margin-top: 60px;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.para-wrapper p{
+    margin: 5px 0;
+}
+
+#review{
+    margin-top: 50px;
+    text-align: justify;
+}
+
+//  ---------------------  navigating buttons  -----------------
+
+li{
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
+ul{
+    display: flex;
+    align-items: center;
+}
+
+.courseNextPrev{
+    position: relative;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 50px;
+    margin-bottom: 50px;
+}
+
+.courseNextPrev li{
+    margin: 15px;
+    cursor: pointer;
+}
+
+.courseNextPrev li button span{
+    margin: 0 5px;
+}
+
+.directionTxt{
+    background-color: white;
+    padding: 4px 14px;
+    border-radius: 10px;
+}
+
+//@media helps disable some items when the screen is small
+
+.courseNextPrev li button{
+    background-color: rgb(124, 183, 255);
+    padding: 7px 12px;
+    border-radius: 10px;
+    outline: none;
+    @media screen and (max-width: 390px){
+        padding: 7px 7px;
+    }
+}
+
+.reviewTxt{
+    @media screen and (max-width: 450px){
+        display: none;
+    }
+}
+
+em{
+    font-weight: bold;
+}
+
+hr{
+    margin: auto;
+    width: 70%;
+    margin-top: 90px;
+    margin-bottom: -10px;
+}
