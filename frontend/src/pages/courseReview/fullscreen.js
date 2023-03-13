@@ -13,8 +13,8 @@ export default function Fullscreen() {
     
     //receive parameters from variables in url  -->  currentTheme is 1 when it is light theme, 2 for dark theme.
     const {id, currentTheme} = useParams()
-
     const [review, setReview] = useState('')
+    const [wholearfix, setwholearfix] = useState({})
 
     //theme style configuration
     const newArticleTheme = {
@@ -37,7 +37,6 @@ export default function Fullscreen() {
     function updateArr(){
         setCurrentArr(allArr[ind])
         // modifying the link when looking at next/previous article without refreshing
-        window.history.pushState({}, null, `http://localhost:3000/${allArr[ind].code}/${currentTheme}`);
     }
 
     //for navigating through next/previous article
@@ -71,9 +70,12 @@ export default function Fullscreen() {
     useEffect(()=>{
         if(startParse.current){
             setReview(parse(allArr[ind].review))
+            setwholearfix(allArr[ind])
+            // console.log('ind  = ', ind, ' length = ', allArr.length)
+            window.history.pushState({}, null, `http://localhost:3000/${allArr[ind].code}/${currentTheme}`);
         }
         else startParse.current = true
-    }, [currentarr])
+    }, [currentarr, window.location.href])
 
     //show the clicked article + update article to show when the article_id to show is changed
     useEffect(()=>{
@@ -82,6 +84,7 @@ export default function Fullscreen() {
                 setCurrentArr(allArr[i]);
                 setInd(i)
                 setReview(parse(allArr[i].review))
+                setwholearfix(allArr[ind])
                 break;
             }
         }
@@ -105,12 +108,12 @@ export default function Fullscreen() {
             </Link>
         </div>
         <div id="article-body">
-            <h1 id="course-code" className="text-5xl">{currentarr.code}</h1>
-            <h2 id="course-name" className="text-3xl">{currentarr.title}</h2>
+            <h1 id="course-code" className="text-5xl">{wholearfix.code}</h1>
+            <h2 id="course-name" className="text-3xl">{wholearfix.title}</h2>
             <div className="para-wrapper">
-                <p id="instructor"><em>Instructor:&nbsp;&nbsp;&nbsp;&nbsp;</em> {currentarr.instructor}</p>
-                <p id="data-taken" ><em>Date Taken:&nbsp;&nbsp;</em> {currentarr.dateTaken}</p>
-                <p id="assessment"><em>Assessment:&nbsp;&nbsp;</em>{currentarr.assessment}</p>
+                <p id="instructor"><em>Instructor:&nbsp;&nbsp;&nbsp;&nbsp;</em> {wholearfix.instructor}</p>
+                <p id="data-taken" ><em>Date Taken:&nbsp;&nbsp;</em> {wholearfix.dateTaken}</p>
+                <p id="assessment"><em>Assessment:&nbsp;&nbsp;</em>{wholearfix.assessment}</p>
                 <p component="span" id="review">{review}</p>
                 {/* {review} */}
             </div>
