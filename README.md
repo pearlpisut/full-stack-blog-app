@@ -1,6 +1,9 @@
 # Full-Stack Blog App
 This is my personal project, a full-stack Course Review Blog created with React and Django.
 
+https://user-images.githubusercontent.com/82090378/224871827-995cae49-720b-4ff8-a51c-1a85d07dd6ea.mp4
+
+
 ## Main features
 - Toggle Themes (light/dark)
 - Search reviews
@@ -12,7 +15,7 @@ As much as I seek to find reviews to read before taking any course, I have becom
 I, in fact, was planning to create a full-stack personal portfolio website, where a course review blog is one of the features, to learn more about backend side of webapps for the very first time and stregthen skills in frontend frameworks. After realizing potential of each technologies and what I can learn further, developing such remaining features along with acquiring new skills will be my next objective.
 
 ## Technologies used
-**Front-end**: HTML, CSS, SCSS, JavaScript, React.JS
+**Front-end**: HTML, CSS, SCSS, JavaScript, React.JS, Tailwind
 
 **Back-end**: Django, Python
 
