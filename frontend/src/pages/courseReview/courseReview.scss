@@ -1,5 +1,9 @@
 body{
-    height: 100%;  //avoiding white space in dark theme mode
+    min-height: 100vh;  //avoiding white space in dark theme mode
+}
+
+.reviewpage{
+    min-height: 100vh;  //avoiding white space in dark theme mode
 }
 
 //  -----------------  Theme setter button  ------------------
